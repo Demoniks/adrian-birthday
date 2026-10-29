@@ -1,0 +1,37 @@
+{
+  // Run these from  Terminal → Run Task…  (or Ctrl/Cmd+Shift+B for the live preview)
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "▶ Preview birthday page (live reload)",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": ["scripts/serve.py"],
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build site",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": ["scripts/build.py"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build site (re-encode all media)",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": ["scripts/build.py", "--force"],
+      "problemMatcher": []
+    },
+    {
+      "label": "🚀 Publish to GitHub Pages",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": ["scripts/publish.py"],
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    }
+  ]
+}

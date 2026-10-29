@@ -1,0 +1,22 @@
+# Speech in media/brothers/videos/01-brotherhood.mp4 (Whisper, auto-generated — may have mistakes)
+# Use the left number as a quote's  at = …  in story.toml.
+
+    0.6  When all hope is lost,
+    4.4  Itadori,
+    6.4  never give up.
+    8.3  I can't.
+   10.2  You take it from here.
+   12.6  Because it's in the darkest moments,
+   17.3  where your strength is truly tested.
+   25.0  And remember,
+   28.5  you're not alone.
+   30.9  Those who believe in you will be there to pick you back up.
+   36.6  Wake up, brother! Our battles side by side are just beginning!
+   43.3  I can't...
+   47.3  ...stop anymore.
+   49.8  Brother, you're a man amongst men. Don't limit yourself to such narrow-mindedness.
+   55.6  we are jujutsu sorcerers me you welcome back brother yeah
+   65.8  attempting to find meaning in the deaths of the fallen it can at times defile the
+   71.8  memory of those who lost but even so what is it that you have been entrusted
+   79.2  with. There's no need to find your answer to that now. However, until you're able to find it,
+   89.5  you cannot stop moving forward.

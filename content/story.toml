@@ -1,0 +1,317 @@
+# ══════════════════════════════════════════════════════════════════════
+#  story.toml: everything on the page except your letter.
+#  Your letter lives in  content/letter.md
+#
+#  • {recipient}, {sender} and {nickname} are filled in automatically.
+#  • In messages: blank line = new paragraph, **bold**, *italic*.
+#  • Save the file while the live preview is running and the page reloads.
+# ══════════════════════════════════════════════════════════════════════
+
+[site]
+recipient = "Adrian"
+sender    = "Your Brother"                # ← put your name here
+nickname  = "the Bakugo of the family"
+hero_jp   = "誕生日おめでとう"              # "Happy birthday" in Japanese
+hero_top  = "Happy Birthday"
+date_line = ""                            # e.g. "November 12, 2026". Leave empty to hide it.
+page_title = "Happy Birthday, {recipient}"
+link_preview = "A letter from {sender}. Sound on."
+site_url  = ""                            # optional: "https://YOUR-USER.github.io/REPO/" (nicer link previews)
+
+[gate]                                    # the first screen he sees
+kicker = "A letter for"
+from   = "from {sender}"
+button = "Open it"
+hint   = "Sound on. Take your time."
+
+[finale]
+top     = "Happy Birthday,"
+line    = "Go beyond. Plus Ultra."
+signoff = "{sender}"
+button  = "Read it again"
+
+[media]
+video_transition = "dip"   # "dip" = each clip fades out, next fades in  |  "crossfade" = overlap
+video_fade   = 0.9         # seconds for each fade
+dim          = 0.40        # darkness over the videos so text stays readable (0.0 – 0.8)
+max_width    = 1280        # clips are scaled down to this width
+crf          = 26          # video quality: lower = sharper + bigger files (20–30)
+clip_audio   = true        # keep each clip's own sound, played quietly behind everything
+clip_volume  = 0.12        # how loud that clip sound is, from 0.0 to 1.0 (0.12 is just audible)
+music_volume = 0.70
+voice_volume = 1.00
+duck         = 0.25        # music drops to 25% while a voice line plays
+auto_voice   = true        # play a card's voice line when it scrolls into view
+normalize_audio = true     # even out loudness between songs and voice lines
+music_bitrate = "160k"
+voice_bitrate = "128k"
+
+
+[trim]
+# Cut the uploader's intros/outros (Patreon cards, "thanks for watching"…) off a clip.
+# Key = the clip's file name without extension. Seconds are from the original video.
+# Quote "at" times stay in the original video's seconds. The build shifts them for you.
+"01-the-next-number-one" = { start = 5.3, end = 209.3 }
+"01-brotherhood"         = { end = 96.6 }
+
+
+# ── Characters ───────────────────────────────────────────────────────
+#  initials show in the glowing badge; color is their accent.
+
+[characters.bakugo]
+name = "Katsuki Bakugo"
+short = "Bakugo"
+anime = "My Hero Academia"
+initials = "KB"
+color = "#ff7a1a"
+
+[characters.allmight]
+name = "All Might"
+short = "All Might"
+anime = "My Hero Academia"
+initials = "AM"
+color = "#ffd23f"
+
+[characters.deku]
+name = "Izuku Midoriya"
+short = "Deku"
+anime = "My Hero Academia"
+initials = "IM"
+color = "#2ee59d"
+
+[characters.todo]
+name = "Aoi Todo"
+short = "Todo"
+anime = "Jujutsu Kaisen"
+initials = "AT"
+color = "#5b8cff"
+
+[characters.nanami]
+name = "Kento Nanami"
+short = "Nanami"
+anime = "Jujutsu Kaisen"
+initials = "KN"
+color = "#e8c547"
+
+[characters.yuji]
+name = "Yuji Itadori"
+short = "Yuji"
+anime = "Jujutsu Kaisen"
+initials = "YI"
+color = "#ff3b5c"
+
+[characters.tanjiro]
+name = "Tanjiro Kamado"
+short = "Tanjiro"
+anime = "Demon Slayer"
+initials = "TK"
+color = "#3fd08a"
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  SECTIONS: each one gets its own background clips, music and color.
+#  The section id is also its media folder:  media/<id>/videos|music|voice
+#
+#  Flow block types:
+#    hero      big "Happy Birthday" opener
+#    letter    the next part of letter.md (split with [[next]])
+#    message   a character talking to {recipient}      (character, text, voice?)
+#    moment    a scene where they lifted someone up    (character, to, when, scene, lesson, line?, voice?)
+#    spotlight a list card                             (title, intro?, points)
+#
+#  "line"  → paste the exact anime line you love; it shows as a big quote.
+#  "voice" → file name (no extension needed) in media/<id>/voice/.
+#            That clip plays when the card scrolls into view.
+#
+#  QUOTES: short lines that build up on the background as the clips play.
+#    [[sections.quotes]]   character, text, video?, voice?
+#    • Quote 1 shows when clip 1 starts, quote 2 with clip 2, and so on.
+#    • video = "03-todo"  pins a quote to that clip instead (its file name,
+#      or just the start of it like "03").
+#    • at = 23.6  pops the quote up at that second of its clip (when it's said).
+#    • No clips yet? The quotes still show up, one every few seconds.
+#    • Keep them short: one or two lines reads best behind the letter.
+# ══════════════════════════════════════════════════════════════════════
+
+[[sections]]
+id = "plus-ultra"
+title = "Plus Ultra"
+anime = "My Hero Academia"
+jp = "第一章"
+tagline = "Starring Katsuki Bakugo, as played by {recipient}."
+accent  = "#ff7a1a"
+accent2 = "#ffd23f"
+fx = "embers"              # embers | energy | none
+
+  # Lines spoken in media/plus-ultra/videos/01-the-next-number-one.mp4
+  # at = the second it's said in the clip, so the quote pops up right on it.
+  [[sections.quotes]]
+  character = "bakugo"
+  at = 23.6
+  text = "No matter what power you end up with, you'll never be able to beat me."
+
+  [[sections.quotes]]
+  character = "bakugo"
+  at = 58.4
+  text = "A way to victory! There is no other choice!"
+
+  [[sections.quotes]]
+  character = "allmight"
+  at = 90.3
+  text = "Not because I'm a symbol, but because I will do as my master did for me."
+
+  [[sections.quotes]]
+  character = "allmight"
+  at = 116.2
+  text = "It's your turn."
+
+  [[sections.quotes]]
+  character = "allmight"
+  at = 148.7
+  text = "There's a difference between those who aim for the top and those who will settle."
+
+  [[sections.quotes]]
+  character = "bakugo"
+  at = 160.5
+  text = "I'm just getting started! I'm gonna end up the number one hero no matter what!"
+
+  [[sections.quotes]]
+  character = "bakugo"
+  at = 177.1
+  text = "I'll show the world what a champion looks like!"
+
+  [[sections.quotes]]
+  character = "bakugo"
+  at = 190.4
+  text = "I'll end up better than every pro, even All Might!"
+
+  [[sections.flow]]
+  type = "hero"
+
+  [[sections.flow]]
+  type = "letter"
+
+  [[sections.flow]]
+  type = "spotlight"
+  title = "Why you're the Bakugo of this family"
+  intro = "Let's be honest about it:"
+  # ↓ rewrite these about him, with the real stuff only you know
+  points = [
+    "You'd never admit you care, but you show up every single time.",
+    "Second place was never in your vocabulary.",
+    "Knock you down and you come back louder.",
+    "Under all that fire is someone who'd do anything for the people he lets in.",
+  ]
+
+  [[sections.flow]]
+  type = "moment"
+  character = "deku"
+  to = "Bakugo"
+  when = "Deku vs. Kacchan, Part 2 · Season 3"
+  scene = "After All Might's last fight, Bakugo finally lets out everything he's been carrying, and Deku doesn't run. He meets him head-on, the two of them fighting it out at night until there's nothing left to hide."
+  lesson = "The people who push you hardest are usually the ones who care the most. That's what brothers are."
+  line = ""
+  voice = "deku-kacchan"
+
+  [[sections.flow]]
+  type = "moment"
+  character = "deku"
+  to = "Todoroki"
+  when = "U.A. Sports Festival · Season 2"
+  scene = "Todoroki refuses to use half his power because of his father. Mid-fight, fingers broken, Deku keeps pushing. Not to win, but to make him see that his power belongs to him and nobody else."
+  lesson = "Don't let anyone else decide what your strength is for."
+  line = ""
+  voice = "deku-todoroki"
+
+  [[sections.flow]]
+  type = "moment"
+  character = "deku"
+  to = "Kota"
+  when = "Forest Training Camp · Season 3"
+  scene = "Kota is a kid who hates heroes. When a villain corners him, Deku throws himself in anyway. Arms wrecked, he stays standing between the boy and the danger."
+  lesson = "You don't need a reason to help someone. You just go."
+  line = ""
+  voice = "deku-kota"
+
+
+[[sections]]
+id = "brothers"
+title = "Brothers"
+anime = "Jujutsu Kaisen × Demon Slayer"
+jp = "第二章 · 兄弟"
+tagline = "Nobody gets back up alone."
+accent  = "#8b5cf6"
+accent2 = "#ff3b5c"
+fx = "energy"
+
+  # Lines spoken in media/brothers/videos/01-brotherhood.mp4
+  [[sections.quotes]]
+  character = "nanami"
+  at = 10.2
+  text = "You take it from here."
+
+  [[sections.quotes]]
+  character = "todo"
+  at = 36.6
+  text = "Wake up, brother! Our battles side by side are just beginning!"
+
+  [[sections.quotes]]
+  character = "todo"
+  at = 49.8
+  text = "Brother, you're a man amongst men. Don't limit yourself to such narrow-mindedness."
+
+  [[sections.quotes]]
+  character = "todo"
+  at = 55.6
+  text = "We are jujutsu sorcerers."
+
+  [[sections.quotes]]
+  character = "todo"
+  at = 60.0
+  text = "Welcome back, brother."
+
+  [[sections.quotes]]
+  character = "todo"
+  at = 75.2
+  text = "What is it that you have been entrusted with?"
+
+  [[sections.quotes]]
+  character = "todo"
+  at = 87.1
+  text = "Until you're able to find it, you cannot stop moving forward."
+
+  [[sections.flow]]
+  type = "moment"
+  character = "todo"
+  to = "Yuji"
+  when = "Shibuya Incident · Season 2"
+  scene = "After losing Nanami and Nobara, Yuji is ready to let Mahito finish him. Then Todo walks in, stands beside him in that station, and reminds him who he is, and that he isn't fighting alone anymore."
+  lesson = "When you can't find the strength to stand, borrow it from the people standing next to you."
+  line = ""
+  voice = "todo-yuji"
+
+  [[sections.flow]]
+  type = "letter"
+
+  [[sections.flow]]
+  type = "moment"
+  character = "tanjiro"
+  to = "Nezuko"
+  when = "Natagumo Mountain · Season 1"
+  scene = "Tangled in Rui's threads with Nezuko in danger, Tanjiro remembers his father's fire dance and turns that memory into the strength to protect his sister."
+  lesson = "Family is the fire that gets you back on your feet."
+  line = ""
+  voice = "tanjiro-nezuko"
+
+  [[sections.flow]]
+  type = "moment"
+  character = "tanjiro"
+  to = "Giyu"
+  when = "Hashira Training"
+  scene = "Giyu believes he doesn't deserve to stand among the Hashira. Tanjiro keeps showing up until Giyu remembers what his friend Sabito entrusted to him, and he chooses to carry it forward."
+  lesson = "What the people you love gave you is meant to be carried forward and shared with your group."
+  line = ""
+  voice = "tanjiro-giyu"
+
+  [[sections.flow]]
+  type = "letter"

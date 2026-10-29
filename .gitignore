@@ -1,0 +1,27 @@
+# Your raw clips and songs stay on your computer.
+# The build writes compressed, web-ready copies into docs/media/ — those get published.
+/media/**/*.mp4
+/media/**/*.mov
+/media/**/*.mkv
+/media/**/*.webm
+/media/**/*.m4v
+/media/**/*.avi
+/media/**/*.wmv
+/media/**/*.flv
+/media/**/*.mp3
+/media/**/*.m4a
+/media/**/*.aac
+/media/**/*.wav
+/media/**/*.ogg
+/media/**/*.oga
+/media/**/*.opus
+/media/**/*.flac
+/media/**/*.wma
+
+.build-cache.json
+*.tmp.mp4
+*.tmp.mp3
+__pycache__/
+.venv/
+.DS_Store
+Thumbs.db

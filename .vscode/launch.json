@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Preview birthday page",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/serve.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Build site",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/build.py",
+      "console": "integratedTerminal"
+    }
+  ]
+}

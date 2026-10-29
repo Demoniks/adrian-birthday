@@ -31,7 +31,7 @@ Stand up again to where you are today, and remember this:
 Your brother Alexis, is working hard everyday to complete his dreams, to see you all winning, and no matter what others think or say about him, is his will, his hunger, his willing to help others, the way he keeps pushing his limits every time, and for some reason his unique way to just be him, is what makes others to keep pushing, to see that if they focus just a little more, trust in themselves a little more every day. Everyone can achieve amazing things.
 
 And if somebody else read this:
-You are not alone out there, there is hope, there is a light to achieve your greatest dreams. Hear me out; when your head tells you, "I can't do it", "It is impossible", "He/She's better than me". *Set Your Heart Ablaze" and still do it.
+You are not alone out there, there is hope, there is a light to achieve your greatest dreams. Hear me out; when your head tells you, "I can't do it", "It is impossible", "He/She's better than me". *Set Your Heart Ablaze* and still do it.
 Please don't give up, you are loved, and you bring to this world, things that no one else can, so hold on.
 
 — Your brother

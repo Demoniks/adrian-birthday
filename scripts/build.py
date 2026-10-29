@@ -166,6 +166,8 @@ def build(force: bool = False, use_ffmpeg: bool = True, log=print) -> Path:
     html_doc, missing_voice = render.page(template, story, parts, media, version)
     (OUT / "index.html").write_text(html_doc, "utf-8")
     (OUT / ".nojekyll").write_text("", "utf-8")
+    # private page: keep it out of search results
+    (OUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n", "utf-8")
 
     # summary
     log("✓ built docs/index.html")
